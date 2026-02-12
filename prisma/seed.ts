@@ -1,9 +1,12 @@
+import 'dotenv/config';
 import { AssetType, PaymentMethod, PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = "postgres://harcamayonetimi:harcamayonetimi123.@45.158.14.222:54399/harcamayonetimi";
 if (!connectionString) {
-  throw new Error('DATABASE_URL is not defined');
+  throw new Error(
+    'Database URL is not defined. Set DATABASE_URL or POSTGRES_PRISMA_URL/POSTGRES_URL.',
+  );
 }
 
 const adapter = new PrismaPg({ connectionString });

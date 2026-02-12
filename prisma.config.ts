@@ -7,7 +7,7 @@ const databaseUrl =
   process.env["DATABASE_URL"] ??
   process.env["POSTGRES_PRISMA_URL"] ??
   process.env["POSTGRES_URL"] ??
-  "postgresql://placeholder:placeholder@localhost:5432/placeholder?schema=public";
+  "postgres://harcamayonetimi:harcamayonetimi123.@45.158.14.222:54399/harcamayonetimi";
 
 export default defineConfig({
   schema: "prisma/schema.prisma",

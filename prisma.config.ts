@@ -6,13 +6,8 @@ loadEnv();
 const databaseUrl =
   process.env["DATABASE_URL"] ??
   process.env["POSTGRES_PRISMA_URL"] ??
-  process.env["POSTGRES_URL"];
-
-if (!databaseUrl) {
-  throw new Error(
-    "Missing database URL. Set DATABASE_URL (preferred) or POSTGRES_PRISMA_URL/POSTGRES_URL in the runtime environment.",
-  );
-}
+  process.env["POSTGRES_URL"] ??
+  "postgresql://placeholder:placeholder@localhost:5432/placeholder?schema=public";
 
 export default defineConfig({
   schema: "prisma/schema.prisma",
